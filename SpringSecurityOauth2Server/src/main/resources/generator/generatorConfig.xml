@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <properties resource="application.properties"/>
+
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <plugin type="${mapper.plugin}">
+            <property name="mappers" value="${mapper.Mapper}"/>
+        </plugin>
+
+        <jdbcConnection driverClass="${spring.datasource.driver-class-name}"
+                        connectionURL="${spring.datasource.url}"
+                        userId="${spring.datasource.username}"
+                        password="${spring.datasource.password}">
+        </jdbcConnection>
+
+        <javaModelGenerator targetPackage="${targetModelPackage}" targetProject="${targetJavaProject}"/>
+
+        <sqlMapGenerator targetPackage="${targetXMLPackage}"  targetProject="${targetResourcesProject}"/>
+
+        <javaClientGenerator targetPackage="${targetMapperPackage}" targetProject="${targetJavaProject}" type="XMLMAPPER" />
+
+        <table tableName="department" >
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="department_manager" >
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="project_department_manager" >
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="task_template" >
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <!--<table tableName="project_user" >-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="project" >-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="project_role" >-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="project_permission" >-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="group" >-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="monther_template" >-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="project_template" >-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="mother_template_phase" >-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="project_template_phase" >-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="task" >-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="op_timeline" >-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="user_role" >-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="task_comment" >-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="notification" >-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="role_permission" >-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+    </context>
+</generatorConfiguration>

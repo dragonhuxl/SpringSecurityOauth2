@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.ProjectRoleMapper">
+  <resultMap id="BaseResultMap" type="com.example.demo.entity.ProjectRole">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+    <result column="role_level" jdbcType="VARCHAR" property="roleLevel" />
+  </resultMap>
+
+  <select id="getRolesByUserId" resultMap="BaseResultMap" parameterType="int">
+    select r.id,r.role_name,r.role_level
+    from project_role r,user_role ur
+    where r.id = ur.role_id and ur.user_id = #{userId}
+  </select>
+</mapper>
