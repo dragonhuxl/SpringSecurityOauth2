@@ -1,0 +1,305 @@
+{
+	"id": "cac99348-f587-7ab4-1491-8b0c776b8872",
+	"name": "SpringSecurityOauth2",
+	"description": "",
+	"order": [
+		"763ccfb6-07a4-c505-12cb-93063f0bea0f",
+		"3e3ead1b-e831-1515-2fe4-ababbe687e12",
+		"63527d75-4d9c-6d11-9b21-a08436c7d207",
+		"9daad067-9164-5e5c-0444-b975872bf1d7",
+		"ab6e8e30-8eb4-c868-4bbd-75a78e84ddb1",
+		"f970dc0b-8b54-0028-a89f-7dbb91b7da7b"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1542963823652,
+	"owner": "4005928",
+	"public": false,
+	"requests": [
+		{
+			"id": "3e3ead1b-e831-1515-2fe4-ababbe687e12",
+			"headers": "Content-Type: application/x-www-form-urlencoded\nAuthorization: Basic YXNpYWluZm8tY2xpZW50OmFzaWFpbmZvLXNlY3JldA==\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic YXNpYWluZm8tY2xpZW50OmFzaWFpbmZvLXNlY3JldA==",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:38080/oauth/token",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "cac99348-f587-7ab4-1491-8b0c776b8872",
+			"data": [
+				{
+					"key": "refresh_token",
+					"value": "f1193d00-62d8-40e8-968b-923a99c0a518",
+					"description": ""
+				},
+				{
+					"key": "grant_type",
+					"value": "refresh_token",
+					"description": ""
+				}
+			],
+			"dataMode": "urlencoded",
+			"name": "refreshToken",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1542963934715,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "63527d75-4d9c-6d11-9b21-a08436c7d207",
+			"headers": "Content-Type: application/x-www-form-urlencoded\nAuthorization: bearer e0701db2-9b44-4b50-9c84-8b8fd9ac949b\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "bearer e0701db2-9b44-4b50-9c84-8b8fd9ac949b",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/admin?name=huxl",
+			"queryParams": [
+				{
+					"key": "name",
+					"value": "huxl",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "cac99348-f587-7ab4-1491-8b0c776b8872",
+			"data": null,
+			"dataMode": "params",
+			"name": "ADMIN_URI",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1542963963315,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "763ccfb6-07a4-c505-12cb-93063f0bea0f",
+			"headers": "Content-Type: application/x-www-form-urlencoded\nAuthorization: Basic YXNpYWluZm8tY2xpZW50OmFzaWFpbmZvLXNlY3JldA==\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic YXNpYWluZm8tY2xpZW50OmFzaWFpbmZvLXNlY3JldA==",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:38080/oauth/token",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "cac99348-f587-7ab4-1491-8b0c776b8872",
+			"data": [
+				{
+					"key": "client_id",
+					"value": "asiainfo-client",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_secret",
+					"value": "asiainfo-secret",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "grant_type",
+					"value": "password",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "username",
+					"value": "cuixb",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "asiainfo-cuixb",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "scope",
+					"value": "read",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				}
+			],
+			"dataMode": "urlencoded",
+			"name": "getToken",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1542963893103,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "9daad067-9164-5e5c-0444-b975872bf1d7",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8080/noOauth?name=huxl",
+			"queryParams": [
+				{
+					"key": "name",
+					"value": "huxl",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "cac99348-f587-7ab4-1491-8b0c776b8872",
+			"data": null,
+			"dataMode": "params",
+			"name": "noOauth_URI",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1542963980476,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "ab6e8e30-8eb4-c868-4bbd-75a78e84ddb1",
+			"headers": "Content-Type: application/x-www-form-urlencoded\nAuthorization: bearer fe46e648-9a5a-4c14-85f3-d58c92e3e86f\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": ""
+				},
+				{
+					"key": "Authorization",
+					"value": "bearer fe46e648-9a5a-4c14-85f3-d58c92e3e86f",
+					"description": ""
+				}
+			],
+			"url": "localhost:8080/user?name=huxl",
+			"queryParams": [
+				{
+					"key": "name",
+					"value": "huxl",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "cac99348-f587-7ab4-1491-8b0c776b8872",
+			"data": null,
+			"dataMode": "params",
+			"name": "USER_URI",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1542963997266,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "f970dc0b-8b54-0028-a89f-7dbb91b7da7b",
+			"headers": "Content-Type: application/x-www-form-urlencoded\nAuthorization: bearer fe46e648-9a5a-4c14-85f3-d58c92e3e86f\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": ""
+				},
+				{
+					"key": "Authorization",
+					"value": "bearer fe46e648-9a5a-4c14-85f3-d58c92e3e86f",
+					"description": ""
+				}
+			],
+			"url": "localhost:8080/tourist?name=huxl",
+			"queryParams": [
+				{
+					"key": "name",
+					"value": "huxl",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "cac99348-f587-7ab4-1491-8b0c776b8872",
+			"data": null,
+			"dataMode": "params",
+			"name": "TOURIST_URI",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1542964017672,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}
