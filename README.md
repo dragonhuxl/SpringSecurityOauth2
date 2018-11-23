@@ -1,0 +1,2 @@
+# SpringSecurityOauth2
+SpringSecurityOauth2认证服务和资源服务分离
