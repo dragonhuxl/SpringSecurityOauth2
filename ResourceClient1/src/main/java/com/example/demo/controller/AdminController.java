@@ -13,9 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
  * @DATE 2018/11/22 18:23
  * @DES
  */
+@PreAuthorize("hasRole('ADMIN')")
 @RestController
 public class AdminController {
-    @PreAuthorize("hasRole('ADMIN')")
+
     @RequestMapping("/admin")
     @ResponseBody
     public APIResult admin(@RequestParam(name="name") String name){
