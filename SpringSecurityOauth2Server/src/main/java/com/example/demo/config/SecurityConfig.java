@@ -59,6 +59,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private MyAccessDeniedHandler myAccessDeniedHandler;
 
+    @Primary
+    @Bean
+    public ClientDetailsService clientDetailsService() {
+        //配置clientID等授权信息 保存在数据库中
+        //此处使用的Oauth2默认的JdbcClientDetailsService 需要初始化对应的表结构
+        JdbcClientDetailsService clientDetailsService = new JdbcClientDetailsService(dataSource);
+        clientDetailsService.setPasswordEncoder(passwordEncoder);
+        return clientDetailsService;
+    }
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -77,16 +87,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 //认证失败的返回消息
                 .exceptionHandling().authenticationEntryPoint(myAuthenticationEntryPoint).accessDeniedHandler(myAccessDeniedHandler);
-    }
-
-    @Bean
-    @Primary
-    public ClientDetailsService clientDetailsService() {
-        //配置clientID等授权信息 保存在数据库中
-        //此处使用的Oauth2默认的JdbcClientDetailsService 需要初始化对应的表结构
-        JdbcClientDetailsService clientDetailsService = new JdbcClientDetailsService(dataSource);
-        clientDetailsService.setPasswordEncoder(passwordEncoder);
-        return clientDetailsService;
     }
     @Bean
     public TokenStore tokenStore() {
