@@ -75,9 +75,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //禁止跨站请求伪造
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/noOauth/**")
-                //无需认证
-                .permitAll()
                 .antMatchers("/oauth/**")
                 .permitAll()
                 //除了匹配的URL剩下的请求
@@ -91,7 +88,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public TokenStore tokenStore() {
         //配置access_token等授权信息 保存在数据库中 应用重启后token依旧有效
-        //此处使用的Oauth2默认的JdbcTokenStore 需要初始化对应的表结构
+        //此处使用的Oauth2默认的JdbcTokenStore 需要创建对应的表结构
         return new JdbcTokenStore(dataSource);
 //        //配置access_token保存在内存中，应用重启后token失效
 //        return new InMemoryTokenStore();
@@ -100,6 +97,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public BCryptPasswordEncoder encoder(){
         //初始化加密方式 Spring Security提供
+        //userDetailService、clientDetailService都需要添加加密方式
         return new BCryptPasswordEncoder();
     }
 
